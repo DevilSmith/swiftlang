@@ -14,7 +14,6 @@ internal struct SLLocalizingService: SLServiceProtocol {
     func loadData() async -> LangDictionaries {
         
         guard let urlPath = Bundle.module.url(forResource: "Dictionaries", withExtension: "json") else { fatalError("Error") }
-        print(urlPath)
         
         do{
             let data = try Data(contentsOf: urlPath)
