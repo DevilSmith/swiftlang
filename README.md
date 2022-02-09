@@ -24,7 +24,7 @@ or use a ready-made package. Open file `Package.swift` and add dependencies:
 let package = Package(
   name: "TestProject",
   dependencies: [
-    .package(url: "https://gitlab.com/DevilSmith/swiftlang", .branch("main"))
+    .package(url: "https://github.com/DevilSmith/swiftlang", .branch("main"))
   ],
   targets: [
     .target(name: "TestProject", dependencies: ["SwiftLang"])
