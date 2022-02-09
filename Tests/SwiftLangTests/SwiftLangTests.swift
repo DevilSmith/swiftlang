@@ -8,7 +8,7 @@ struct LangDictionaries: Codable{
 }
 
 final class SwiftLangTests: XCTestCase {
-    func testSwiftLangModule() async throws {
+    func testSwiftLangModule() throws {
         
         //Define tests dictionary:
         let testDictionaries = LangDictionaries(
@@ -40,12 +40,12 @@ final class SwiftLangTests: XCTestCase {
         }
         
         //Testing:
-        var locale = await SLLocalizedObject(language: "testDict1")
+        var locale = SLLocalizedObject(language: "testDict1")
         XCTAssertEqual("testDict1", locale.currentLanguage)
         XCTAssertEqual("translatedWord1(testDict1)", locale.getWord("serviceWord1"))
         XCTAssertEqual("translatedWord2(testDict1)", locale.getWord("serviceWord2"))
 
-        await locale.changeLanguageSet(language: "testDict2")
+        locale.changeLanguageSet(language: "testDict2")
         XCTAssertEqual("testDict2", locale.currentLanguage)
         XCTAssertEqual("translatedWord1(testDict2)", locale.getWord("serviceWord1"))
         XCTAssertEqual("translatedWord2(testDict2)", locale.getWord("serviceWord2"))

@@ -6,7 +6,7 @@ public protocol SLObjectProtocol{
     
     var currentLanguage: String { get }
     
-    mutating func changeLanguageSet(language: String) async -> Void
+    mutating func changeLanguageSet(language: String) -> Void
     
     func getWord(_ word: String) -> String
 }
@@ -17,14 +17,14 @@ public struct SLLocalizedObject: SLObjectProtocol {
     private var service: SLLocalizingService
     public var currentLanguage: String
 
-    public init(language: String) async {
+    public init(language: String) {
         service = SLLocalizingService()
         currentLanguage = language
-        currentDictionary = await service.setDict(language: language)
+        currentDictionary = service.setDict(language: language)
     }
     
-    public mutating func changeLanguageSet(language: String) async {
-        currentDictionary = await service.setDict(language: language)
+    public mutating func changeLanguageSet(language: String) {
+        currentDictionary = service.setDict(language: language)
         currentLanguage = language
     }
     
