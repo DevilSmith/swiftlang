@@ -12,4 +12,24 @@ This small module allows you to embed a centralized localization system into you
 
 ## Installation
 
+### Swift Package Manager
+Create a new package with 
+```bash
+$ swift package init
+```
+
+or use a ready-made package. Open file `Package.swift` and add dependencies: 
+
+```swift
+let package = Package(
+  name: "TestProject",
+  dependencies: [
+    .package(url: "https://gitlab.com/DevilSmith/swiftlang", .branch("main"))
+  ],
+  targets: [
+    .target(name: "TestProject", dependencies: ["SwiftLang"])
+  ]
+)
+```
+
 ## Usage
