@@ -9,6 +9,9 @@ internal protocol SLServiceProtocol {
     func getError(_ word: String) -> String
 }
 
+/**
+ Process action from SLLocalizedObject and also deserializes a JSON file with described tables.
+ */
 internal struct SLLocalizingService: SLServiceProtocol {
 
     func loadData() async -> LangDictionaries {
