@@ -40,7 +40,7 @@ final class SwiftLangTests: XCTestCase {
         }
         
         //Testing:
-        var locale = SLLocalizedObject(language: "testDict1", stringPathToDictionary: "Dictionaries.json")
+        var locale = SLLocalizedObject(language: "testDict1", urlPathToDictionary: pathAsURL)
         XCTAssertEqual("testDict1", locale.currentLanguage)
         XCTAssertEqual("translatedWord1(testDict1)", locale.getWord("serviceWord1"))
         XCTAssertEqual("translatedWord2(testDict1)", locale.getWord("serviceWord2"))

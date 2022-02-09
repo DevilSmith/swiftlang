@@ -18,15 +18,6 @@ public struct SLLocalizedObject: SLObjectProtocol {
     private var service: SLLocalizingService
     public var currentLanguage: String
 
-    //String path to dictionary file init:
-    public init(language: String, stringPathToDictionary: String) {
-        service = SLLocalizingService()
-        currentLanguage = language
-        let urlPath = URL(fileURLWithPath: stringPathToDictionary)
-        urlPathToDictionary = urlPath
-        currentDictionary = service.setDict(language: language, urlPath: urlPathToDictionary)
-    }
-    
     //URL path to dictionary file init:
     public init(language: String, urlPathToDictionary: URL) {
         service = SLLocalizingService()
