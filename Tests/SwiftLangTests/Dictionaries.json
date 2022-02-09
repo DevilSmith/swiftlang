@@ -1,1 +1,1 @@
-{"EngDict":{"serviceWord1":"translatedEngWord1","serviceWord2":"translatedEngWord2"},"RusDict":{"serviceWord1":"translatedRusWord1","serviceWord2":"translatedRusWord2"}}
+{"testDict1":{"serviceWord1":"translatedWord1(testDict1)","serviceWord2":"translatedWord2(testDict1)"},"testDict2":{"serviceWord1":"translatedWord1(testDict2)","serviceWord2":"translatedWord2(testDict2)"}}

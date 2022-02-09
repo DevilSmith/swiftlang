@@ -10,34 +10,8 @@ struct LangDictionaries: Codable{
 final class SwiftLangTests: XCTestCase {
     func testSwiftLangModule() throws {
         
-        //Define tests dictionary:
-        let testDictionaries = LangDictionaries(
-            testDict1: [
-                "serviceWord1":"translatedWord1(testDict1)",
-                "serviceWord2":"translatedWord2(testDict1)"
-            ],
-            testDict2: [
-                "serviceWord1":"translatedWord1(testDict2)",
-                "serviceWord2":"translatedWord2(testDict2)"
-            ])
-        
         //Copy the URL of the Dictionaries.json file:
-        let pathAsURL = URL(fileURLWithPath: "Dictionaries.json")
-
-        //Saving current Dictionaries.json to string (DEPRECATED):
-        //let _ = try String(contentsOf: pathAsURL)
-        
-        //Writing test dictionaries on JSON file:
-        if let jsonData = try? JSONEncoder().encode(testDictionaries) {
-           
-            do {
-                print(String(decoding: jsonData, as: UTF8.self))
-                try jsonData.write(to: pathAsURL)
-            }
-            catch {
-                print("Failed to write JSON data: \(error.localizedDescription)")
-            }
-        }
+        guard let pathAsURL = Bundle.module.url(forResource: "Dictionaries", withExtension: "json") else {return XCTestCase.tearDown()}
         
         //Testing:
         var locale = SLLocalizedObject(language: "testDict1", urlPathToDictionary: pathAsURL)
