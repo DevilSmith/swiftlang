@@ -22,7 +22,7 @@ final class SwiftLangTests: XCTestCase {
             ])
         
         //Copy the URL of the Dictionaries.json file:
-        guard let pathAsURL = Bundle.module.url(forResource: "Dictionaries", withExtension: "json") else {fatalError()}
+        let pathAsURL = URL(fileURLWithPath: "Dictionaries.json")
 
         //Saving current Dictionaries.json to string (DEPRECATED):
         //let _ = try String(contentsOf: pathAsURL)
@@ -40,7 +40,7 @@ final class SwiftLangTests: XCTestCase {
         }
         
         //Testing:
-        var locale = SLLocalizedObject(language: "testDict1")
+        var locale = SLLocalizedObject(language: "testDict1", stringPathToDictionary: "Dictionaries.json")
         XCTAssertEqual("testDict1", locale.currentLanguage)
         XCTAssertEqual("translatedWord1(testDict1)", locale.getWord("serviceWord1"))
         XCTAssertEqual("translatedWord2(testDict1)", locale.getWord("serviceWord2"))

@@ -14,17 +14,29 @@ public protocol SLObjectProtocol{
 public struct SLLocalizedObject: SLObjectProtocol {
     
     private var currentDictionary: LangDictionary
+    private var urlPathToDictionary: URL
     private var service: SLLocalizingService
     public var currentLanguage: String
 
-    public init(language: String) {
+    //String path to dictionary file init:
+    public init(language: String, stringPathToDictionary: String) {
         service = SLLocalizingService()
         currentLanguage = language
-        currentDictionary = service.setDict(language: language)
+        let urlPath = URL(fileURLWithPath: stringPathToDictionary)
+        urlPathToDictionary = urlPath
+        currentDictionary = service.setDict(language: language, urlPath: urlPathToDictionary)
+    }
+    
+    //URL path to dictionary file init:
+    public init(language: String, urlPathToDictionary: URL) {
+        service = SLLocalizingService()
+        currentLanguage = language
+        self.urlPathToDictionary = urlPathToDictionary
+        currentDictionary = service.setDict(language: language, urlPath: urlPathToDictionary)
     }
     
     public mutating func changeLanguageSet(language: String) {
-        currentDictionary = service.setDict(language: language)
+        currentDictionary = service.setDict(language: language, urlPath: urlPathToDictionary)
         currentLanguage = language
     }
     

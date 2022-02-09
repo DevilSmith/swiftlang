@@ -4,8 +4,8 @@ internal protocol SLServiceProtocol {
     typealias LangDictionaries = [String:Dictionary<String, String>]
     typealias LangDictionary = [String:String]
     
-    func loadData() -> LangDictionaries
-    func setDict(language: String) -> LangDictionary
+    func loadData(_ urlPathToDict: URL) -> LangDictionaries
+    func setDict(language: String, urlPath: URL) -> LangDictionary
     func getError(_ word: String) -> String
 }
 
@@ -14,12 +14,10 @@ internal protocol SLServiceProtocol {
  */
 internal struct SLLocalizingService: SLServiceProtocol {
 
-    func loadData() -> LangDictionaries {
-        
-        guard let urlPath = Bundle.module.url(forResource: "Dictionaries", withExtension: "json") else { fatalError("Error") }
+    func loadData(_ urlPathToDict: URL) -> LangDictionaries {
         
         do{
-            let data = try Data(contentsOf: urlPath)
+            let data = try Data(contentsOf: urlPathToDict)
             do {
             let dicts = try JSONDecoder().decode(LangDictionaries.self, from: data)
                 return dicts
@@ -33,8 +31,8 @@ internal struct SLLocalizingService: SLServiceProtocol {
         }
     }
     
-    func setDict(language: String) -> LangDictionary {
-        guard let dict = loadData()[language] else {
+    func setDict(language: String, urlPath: URL) -> LangDictionary {
+        guard let dict = loadData(urlPath)[language] else {
             fatalError("(SwiftLang) Dictionary '\(language)' does not exist.")
         }
         return dict

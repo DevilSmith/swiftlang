@@ -20,10 +20,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SwiftLang",
-            dependencies: [],
-            resources: [.process("Resources/Dictionaries.json")]),
+            dependencies: []),
         .testTarget(
             name: "SwiftLangTests",
-            dependencies: ["SwiftLang"]),
+            dependencies: ["SwiftLang"],
+            resources: [.process("Dictionaries.json")]),
     ]
 )
