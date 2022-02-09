@@ -79,3 +79,4 @@ To get a localized word from a dictionary, call the method `getWord(_ word: Stri
 ```swift
 localization.getWord("hello")
 ```
+### Result
