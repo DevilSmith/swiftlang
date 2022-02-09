@@ -18,7 +18,7 @@ Create a new package with
 $ swift package init
 ```
 
-or use a ready-made package. Open file `Package.swift` and add dependencies: 
+or use a ready-made package. Open manifest file `Package.swift` and add dependencies: 
 
 ```swift
 let package = Package(
@@ -34,3 +34,16 @@ let package = Package(
 
 ## Usage
 In order to start working with SwiftLang you need to create a JSON file (or several) in a convenient place in the project, in which dictionaries (language sets) will be described. The structure of the JSON file should match the example below:
+
+```json
+{
+   "testDict1":{
+      "serviceWord1":"translatedWord1(testDict1)",
+      "serviceWord2":"translatedWord2(testDict1)"
+   },
+   "testDict2":{
+      "serviceWord1":"translatedWord1(testDict2)",
+      "serviceWord2":"translatedWord2(testDict2)"
+   }
+}
+```
