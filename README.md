@@ -80,5 +80,5 @@ To get a localized word from a dictionary, call the method `getWord(_ word: Stri
 localization.getWord("hello")
 ```
 ### Result
-![enImage](/assets/en.jpg)
-![jaImage](/assets/ja.jpg)
+![enImage](/assets/en.png)
+![jaImage](/assets/ja.png)
