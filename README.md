@@ -37,13 +37,13 @@ In order to start working with SwiftLang you need to create a JSON file (or seve
 
 ```json
 {
-   "testDict1":{
-      "serviceWord1":"translatedWord1(testDict1)",
-      "serviceWord2":"translatedWord2(testDict1)"
+   "en":{
+      "hello":"Hello",
+      "world":"World !"
    },
-   "testDict2":{
-      "serviceWord1":"translatedWord1(testDict2)",
-      "serviceWord2":"translatedWord2(testDict2)"
+   "ja":{
+      "hello":"こんにちは",
+      "world":"世界 ！"
    }
 }
 ```
