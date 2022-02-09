@@ -13,9 +13,9 @@ public protocol SLObjectProtocol{
 
 public struct SLLocalizedObject: SLObjectProtocol {
     
-    internal var currentDictionary: LangDictionary
-    internal var urlPathToDictionary: URL
-    internal var service: SLLocalizingService
+    private var currentDictionary: LangDictionary
+    private var urlPathToDictionary: URL
+    private var service: SLLocalizingService
     public var currentLanguage: String
 
     //URL path to dictionary file init:
