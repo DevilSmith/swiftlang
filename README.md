@@ -47,3 +47,29 @@ In order to start working with SwiftLang you need to create a JSON file (or seve
    }
 }
 ```
+Next, you need to import SwiftLang into the project code:
+```swift
+import SwiftLang
+```
+Create an instance of "SLLocalizedObject" and write the path to the JSON file as a URL in the instance constructor:
+```swift
+//Other code...
+
+    //Declaring SLLocalizedObject
+    let localization: SLLocalizedObject
+    
+    //Class initializer or any other method:
+    init(){
+        
+        //Get path as URL in project to Dictionaries.json
+        guard let pathToDictionary = Bundle.main.url(forResource: "Dictionaries", withExtension: "json") else {
+            fatalError("This file does not exist")
+        }
+        
+        //Defining instance
+        localization = SLLocalizedObject(language: "en", urlPathToDictionary: pathToDictionary)
+        
+    }
+    
+//Other code...
+```
