@@ -1,5 +1,8 @@
 import Foundation
 
+/**
+ Protocol describing the interface SLLocalizingService
+ */
 internal protocol SLServiceProtocol {
     typealias LangDictionaries = [String:Dictionary<String, String>]
     typealias LangDictionary = [String:String]
