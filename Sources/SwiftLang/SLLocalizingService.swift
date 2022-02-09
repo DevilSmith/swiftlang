@@ -4,7 +4,7 @@ internal protocol SLServiceProtocol {
     typealias LangDictionaries = [String:Dictionary<String, String>]
     typealias LangDictionary = [String:String]
     
-    func loadData() async -> LangDictionaries
+    func loadData() -> LangDictionaries
     func setDict(language: String) -> LangDictionary
     func getError(_ word: String) -> String
 }
