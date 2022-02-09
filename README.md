@@ -55,6 +55,8 @@ Create an instance of "SLLocalizedObject" and write the path to the JSON file as
 ```swift
 //Other code...
 
+//Example
+
     //Declaring SLLocalizedObject
     let localization: SLLocalizedObject
     
@@ -72,4 +74,8 @@ Create an instance of "SLLocalizedObject" and write the path to the JSON file as
     }
     
 //Other code...
+```
+To get a localized word from a dictionary, call the method `getWord(_ word: String)` in the right place:
+```swift
+localization.getWord("hello")
 ```
