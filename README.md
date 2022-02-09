@@ -5,7 +5,7 @@ Multi-platform localization module on pure Swift.
 This small module allows you to embed a centralized localization system into your multi-platform applications. Provides "SLLocalizedObject" to get a set of translated words, as well as "SLLocalizingService" needed to deserialize dictionaries stored in the JSON file and handle requests from "SLLocalizedObject".
 
 ## Schema
-![SchemaImage](SwiftLangSchema.jpg)
+![SchemaImage](/assets/SwiftLangSchema.jpg)
 
 ## Requirements
 - swift-tools-version:5.3 or higher
@@ -80,3 +80,5 @@ To get a localized word from a dictionary, call the method `getWord(_ word: Stri
 localization.getWord("hello")
 ```
 ### Result
+![enImage](/assets/en.jpg)
+![jaImage](/assets/ja.jpg)
