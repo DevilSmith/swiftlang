@@ -8,7 +8,7 @@ This small module allows you to embed a centralized localization system into you
 ![SchemaImage](SwiftLangSchema.jpg)
 
 ## Requirements
-- swift-tools-version:5.3
+- swift-tools-version:5.3 or higher
 
 ## Installation
 
@@ -33,3 +33,4 @@ let package = Package(
 ```
 
 ## Usage
+In order to start working with SwiftLang you need to create a JSON file (or several) in a convenient place in the project, in which dictionaries (language sets) will be described. The structure of the JSON file should match the example below:
